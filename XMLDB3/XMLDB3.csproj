@@ -1,0 +1,1003 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Project ToolsVersion="12.0" DefaultTargets="Build" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+  <Import Project="..\packages\EntityFramework.6.4.4\build\EntityFramework.props" Condition="Exists('..\packages\EntityFramework.6.4.4\build\EntityFramework.props')" />
+  <PropertyGroup>
+    <ProjectGuid>{BFBEEFB6-A3A6-4D0A-8D6C-FF58D96437C1}</ProjectGuid>
+    <Configuration Condition=" '$(Configuration)' == '' ">Debug</Configuration>
+    <Platform Condition=" '$(Platform)' == '' ">AnyCPU</Platform>
+    <OutputType>Library</OutputType>
+    <LangVersion>8.0</LangVersion>
+    <AssemblyName>XMLDB3</AssemblyName>
+    <TargetFrameworkIdentifier>.NETFramework</TargetFrameworkIdentifier>
+    <TargetFrameworkVersion>v4.7.2</TargetFrameworkVersion>
+    <WarningLevel>4</WarningLevel>
+    <AllowUnsafeBlocks>True</AllowUnsafeBlocks>
+    <TargetFrameworkProfile />
+    <NuGetPackageImportStamp>
+    </NuGetPackageImportStamp>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Platform)' == 'AnyCPU' ">
+    <PlatformTarget>AnyCPU</PlatformTarget>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)' == 'Debug' ">
+    <OutputPath>bin\Debug\</OutputPath>
+    <DebugSymbols>true</DebugSymbols>
+    <DebugType>full</DebugType>
+    <Optimize>false</Optimize>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)' == 'Release' ">
+    <OutputPath>bin\Release\</OutputPath>
+    <DebugSymbols>true</DebugSymbols>
+    <DebugType>pdbonly</DebugType>
+    <Optimize>true</Optimize>
+  </PropertyGroup>
+  <PropertyGroup Condition="'$(Configuration)|$(Platform)' == 'Debug|x86'">
+    <DebugSymbols>true</DebugSymbols>
+    <OutputPath>bin\x86\Debug\</OutputPath>
+    <AllowUnsafeBlocks>true</AllowUnsafeBlocks>
+    <DebugType>full</DebugType>
+    <PlatformTarget>x86</PlatformTarget>
+    <LangVersion>8.0</LangVersion>
+    <CodeAnalysisRuleSet>MinimumRecommendedRules.ruleset</CodeAnalysisRuleSet>
+    <Prefer32Bit>false</Prefer32Bit>
+  </PropertyGroup>
+  <PropertyGroup Condition="'$(Configuration)|$(Platform)' == 'Release|x86'">
+    <DebugSymbols>true</DebugSymbols>
+    <OutputPath>bin\x86\Release\</OutputPath>
+    <AllowUnsafeBlocks>true</AllowUnsafeBlocks>
+    <Optimize>true</Optimize>
+    <DebugType>pdbonly</DebugType>
+    <PlatformTarget>x86</PlatformTarget>
+    <LangVersion>8.0</LangVersion>
+    <CodeAnalysisRuleSet>MinimumRecommendedRules.ruleset</CodeAnalysisRuleSet>
+    <Prefer32Bit>false</Prefer32Bit>
+  </PropertyGroup>
+  <PropertyGroup Condition="'$(Configuration)|$(Platform)' == 'Debug|AnyCPU'">
+    <Prefer32Bit>false</Prefer32Bit>
+  </PropertyGroup>
+  <PropertyGroup Condition="'$(Configuration)|$(Platform)' == 'Release|AnyCPU'">
+    <Prefer32Bit>false</Prefer32Bit>
+  </PropertyGroup>
+  <PropertyGroup Condition="'$(Configuration)|$(Platform)' == 'Debug|x64'">
+    <DebugSymbols>true</DebugSymbols>
+    <OutputPath>bin\x64\Debug\</OutputPath>
+    <AllowUnsafeBlocks>true</AllowUnsafeBlocks>
+    <DebugType>full</DebugType>
+    <PlatformTarget>x64</PlatformTarget>
+    <LangVersion>8.0</LangVersion>
+    <CodeAnalysisRuleSet>MinimumRecommendedRules.ruleset</CodeAnalysisRuleSet>
+  </PropertyGroup>
+  <PropertyGroup Condition="'$(Configuration)|$(Platform)' == 'Release|x64'">
+    <DebugSymbols>true</DebugSymbols>
+    <OutputPath>bin\x64\Release\</OutputPath>
+    <AllowUnsafeBlocks>true</AllowUnsafeBlocks>
+    <Optimize>true</Optimize>
+    <DebugType>pdbonly</DebugType>
+    <PlatformTarget>x64</PlatformTarget>
+    <LangVersion>8.0</LangVersion>
+    <CodeAnalysisRuleSet>MinimumRecommendedRules.ruleset</CodeAnalysisRuleSet>
+  </PropertyGroup>
+  <ItemGroup>
+    <Reference Include="System">
+      <HintPath>C:\Windows\Microsoft.NET\assembly\GAC_MSIL\System\v4.0_4.0.0.0__b77a5c561934e089\System.dll</HintPath>
+    </Reference>
+    <Reference Include="System.Buffers, Version=4.0.3.0, Culture=neutral, PublicKeyToken=cc7b13ffcd2ddd51, processorArchitecture=MSIL">
+      <HintPath>..\packages\System.Buffers.4.5.1\lib\net461\System.Buffers.dll</HintPath>
+    </Reference>
+    <Reference Include="System.ComponentModel" />
+    <Reference Include="System.ComponentModel.DataAnnotations" />
+    <Reference Include="System.Configuration" />
+    <Reference Include="System.Configuration.Install" />
+    <Reference Include="System.Drawing" />
+    <Reference Include="System.Drawing.Design" />
+    <Reference Include="System.Management" />
+    <Reference Include="System.Memory, Version=4.0.1.1, Culture=neutral, PublicKeyToken=cc7b13ffcd2ddd51, processorArchitecture=MSIL">
+      <HintPath>..\packages\System.Memory.4.5.4\lib\net461\System.Memory.dll</HintPath>
+    </Reference>
+    <Reference Include="System.Numerics" />
+    <Reference Include="System.Numerics.Vectors, Version=4.1.4.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a, processorArchitecture=MSIL">
+      <HintPath>..\packages\System.Numerics.Vectors.4.5.0\lib\net46\System.Numerics.Vectors.dll</HintPath>
+    </Reference>
+    <Reference Include="System.Runtime.CompilerServices.Unsafe, Version=4.0.6.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a, processorArchitecture=MSIL">
+      <HintPath>..\packages\System.Runtime.CompilerServices.Unsafe.4.7.1\lib\net461\System.Runtime.CompilerServices.Unsafe.dll</HintPath>
+    </Reference>
+    <Reference Include="System.Text.Json, Version=4.0.1.2, Culture=neutral, PublicKeyToken=cc7b13ffcd2ddd51, processorArchitecture=MSIL">
+      <HintPath>..\packages\System.Text.Json.4.7.2\lib\net461\System.Text.Json.dll</HintPath>
+    </Reference>
+    <Reference Include="System.Threading.Tasks.Extensions, Version=4.2.0.1, Culture=neutral, PublicKeyToken=cc7b13ffcd2ddd51, processorArchitecture=MSIL">
+      <HintPath>..\packages\System.Threading.Tasks.Extensions.4.5.4\lib\net461\System.Threading.Tasks.Extensions.dll</HintPath>
+    </Reference>
+    <Reference Include="System.Transactions" />
+    <Reference Include="System.ValueTuple, Version=4.0.3.0, Culture=neutral, PublicKeyToken=cc7b13ffcd2ddd51, processorArchitecture=MSIL">
+      <HintPath>..\packages\System.ValueTuple.4.5.0\lib\net47\System.ValueTuple.dll</HintPath>
+    </Reference>
+    <Reference Include="System.Data">
+      <HintPath>C:\Windows\Microsoft.NET\assembly\GAC_32\System.Data\v4.0_4.0.0.0__b77a5c561934e089\System.Data.dll</HintPath>
+    </Reference>
+    <Reference Include="System.Core">
+      <HintPath>C:\Windows\Microsoft.NET\assembly\GAC_MSIL\System.Core\v4.0_4.0.0.0__b77a5c561934e089\System.Core.dll</HintPath>
+    </Reference>
+    <Reference Include="Microsoft.CSharp">
+      <HintPath>C:\Windows\Microsoft.NET\assembly\GAC_MSIL\Microsoft.CSharp\v4.0_4.0.0.0__b03f5f7f11d50a3a\Microsoft.CSharp.dll</HintPath>
+    </Reference>
+  </ItemGroup>
+  <ItemGroup>
+    <Compile Include="ConfigurationServerBridge.cs" />
+    <Compile Include="XMLDB3\DataBridge.cs" />
+    <Compile Include="XMLDB3\Objects\Account.cs" />
+    <Compile Include="XMLDB3\Objects\AccountActivation.cs" />
+    <Compile Include="XMLDB3\Objects\AccountRef.cs" />
+    <Compile Include="XMLDB3\Objects\AccountrefCharacter.cs" />
+    <Compile Include="XMLDB3\Objects\AccountrefMeta.cs" />
+    <Compile Include="XMLDB3\Objects\AccountrefPet.cs" />
+    <Compile Include="XMLDB3\Objects\AccountSecondaryPasswordAuth.cs" />
+    <Compile Include="XMLDB3\Objects\BankBase.cs" />
+    <Compile Include="XMLDB3\Objects\BankData.cs" />
+    <Compile Include="XMLDB3\Objects\BankItem.cs" />
+    <Compile Include="XMLDB3\Objects\BankSlotBase.cs" />
+    <Compile Include="XMLDB3\Objects\BankSlotInfo.cs" />
+    <Compile Include="XMLDB3\Objects\BestCook.cs" />
+    <Compile Include="XMLDB3\Objects\BestCookData.cs" />
+    <Compile Include="XMLDB3\Objects\Bid.cs" />
+    <Compile Include="XMLDB3\Objects\BidIDPool.cs" />
+    <Compile Include="XMLDB3\Objects\BidList.cs" />
+    <Compile Include="XMLDB3\Objects\Castle.cs" />
+    <Compile Include="XMLDB3\Objects\CastleBid.cs" />
+    <Compile Include="XMLDB3\Objects\CastleBidder.cs" />
+    <Compile Include="XMLDB3\Objects\CastleBlock.cs" />
+    <Compile Include="XMLDB3\Objects\CastleBlockList.cs" />
+    <Compile Include="XMLDB3\Objects\CastleBuild.cs" />
+    <Compile Include="XMLDB3\Objects\CastleBuildResource.cs" />
+    <Compile Include="XMLDB3\Objects\CastleList.cs" />
+    <Compile Include="XMLDB3\Objects\CCommerceCriminalLost.cs" />
+    <Compile Include="XMLDB3\Objects\ChannelingKey.cs" />
+    <Compile Include="XMLDB3\Objects\Character.cs" />
+    <Compile Include="XMLDB3\Objects\CharacterAchievements.cs" />
+    <Compile Include="XMLDB3\Objects\CharacterAchievementsAchievement.cs" />
+    <Compile Include="XMLDB3\Objects\CharacterAppearance.cs" />
+    <Compile Include="XMLDB3\Objects\CharacterArbeit.cs" />
+    <Compile Include="XMLDB3\Objects\CharacterArbeitDay.cs" />
+    <Compile Include="XMLDB3\Objects\CharacterArbeitDayInfo.cs" />
+    <Compile Include="XMLDB3\Objects\CharacterArbeitInfo.cs" />
+    <Compile Include="XMLDB3\Objects\CharacterCondition.cs" />
+    <Compile Include="XMLDB3\Objects\CharacterData.cs" />
+    <Compile Include="XMLDB3\Objects\CharacterDeed.cs" />
+    <Compile Include="XMLDB3\Objects\CharacterDeedSet.cs" />
+    <Compile Include="XMLDB3\Objects\CharacterDivineKnight.cs" />
+    <Compile Include="XMLDB3\Objects\CharacterDonation.cs" />
+    <Compile Include="XMLDB3\Objects\CharacterFarm.cs" />
+    <Compile Include="XMLDB3\Objects\CharacterFavoritePrivateFarm.cs" />
+    <Compile Include="XMLDB3\Objects\CharacterHeartSticker.cs" />
+    <Compile Include="XMLDB3\Objects\CharacterJob.cs" />
+    <Compile Include="XMLDB3\Objects\CharacterJoust.cs" />
+    <Compile Include="XMLDB3\Objects\CharacterKeyword.cs" />
+    <Compile Include="XMLDB3\Objects\CharacterKeywordSet.cs" />
+    <Compile Include="XMLDB3\Objects\CharacterMacroChecker.cs" />
+    <Compile Include="XMLDB3\Objects\CharacterMarriage.cs" />
+    <Compile Include="XMLDB3\Objects\CharacterMemory.cs" />
+    <Compile Include="XMLDB3\Objects\CharacterMyKnights.cs" />
+    <Compile Include="XMLDB3\Objects\CharacterMyKnightsMember.cs" />
+    <Compile Include="XMLDB3\Objects\CharacterParameter.cs" />
+    <Compile Include="XMLDB3\Objects\CharacterParameterEx.cs" />
+    <Compile Include="XMLDB3\Objects\CharacterPrivate.cs" />
+    <Compile Include="XMLDB3\Objects\CharacterPrivateBook.cs" />
+    <Compile Include="XMLDB3\Objects\CharacterPrivateFarm.cs" />
+    <Compile Include="XMLDB3\Objects\CharacterPrivateRegistered.cs" />
+    <Compile Include="XMLDB3\Objects\CharacterPrivateReserved.cs" />
+    <Compile Include="XMLDB3\Objects\CharacterPVP.cs" />
+    <Compile Include="XMLDB3\Objects\CharacterService.cs" />
+    <Compile Include="XMLDB3\Objects\CharacterShape.cs" />
+    <Compile Include="XMLDB3\Objects\CharacterShapeSet.cs" />
+    <Compile Include="XMLDB3\Objects\CharacterSkill.cs" />
+    <Compile Include="XMLDB3\Objects\CharacterSubSkill.cs" />
+    <Compile Include="XMLDB3\Objects\CharacterSubSkillSet.cs" />
+    <Compile Include="XMLDB3\Objects\CharacterTitles.cs" />
+    <Compile Include="XMLDB3\Objects\CharacterTitlesTitle.cs" />
+    <Compile Include="XMLDB3\Objects\CharIDPool.cs" />
+    <Compile Include="XMLDB3\Objects\Chronicle.cs" />
+    <Compile Include="XMLDB3\Objects\ChronicleBase.cs" />
+    <Compile Include="XMLDB3\Objects\ChronicleInfo.cs" />
+    <Compile Include="XMLDB3\Objects\ChronicleInfoBase.cs" />
+    <Compile Include="XMLDB3\Objects\ChronicleInfoList.cs" />
+    <Compile Include="XMLDB3\Objects\ChronicleList.cs" />
+    <Compile Include="XMLDB3\Objects\CollectionCount.cs" />
+    <Compile Include="XMLDB3\Objects\CollectionCountList.cs" />
+    <Compile Include="XMLDB3\Objects\CollectionInfo.cs" />
+    <Compile Include="XMLDB3\Objects\CollectionItem.cs" />
+    <Compile Include="XMLDB3\Objects\CommerceCredibility.cs" />
+    <Compile Include="XMLDB3\Objects\CommerceCriminal.cs" />
+    <Compile Include="XMLDB3\Objects\CommerceCriminalInfo.cs" />
+    <Compile Include="XMLDB3\Objects\CommerceCriminals.cs" />
+    <Compile Include="XMLDB3\Objects\CommercePurchasedProduct.cs" />
+    <Compile Include="XMLDB3\Objects\CommercePurchasedProducts.cs" />
+    <Compile Include="XMLDB3\Objects\CommerceSystem.cs" />
+    <Compile Include="XMLDB3\Objects\CommerceSystemPost.cs" />
+    <Compile Include="XMLDB3\Objects\CommerceSystemPosts.cs" />
+    <Compile Include="XMLDB3\Objects\CommerceSystemProduct.cs" />
+    <Compile Include="XMLDB3\Objects\CommerceSystemProducts.cs" />
+    <Compile Include="Configuration.cs" />
+    <Compile Include="ConfigurationCache.cs" />
+    <Compile Include="ConfigurationChronicleRank.cs" />
+    <Compile Include="ConfigurationEventLog.cs" />
+    <Compile Include="ConfigurationFeature.cs" />
+    <Compile Include="ConfigurationItemMarket.cs" />
+    <Compile Include="ConfigurationRedirection.cs" />
+    <Compile Include="ConfigurationReport.cs" />
+    <Compile Include="ConfigurationServer.cs" />
+    <Compile Include="ConfigurationServerMain.cs" />
+    <Compile Include="ConfigurationServerMonitor.cs" />
+    <Compile Include="ConfigurationServerProfiler.cs" />
+    <Compile Include="ConfigurationSql.cs" />
+    <Compile Include="ConfigurationSqlConnections.cs" />
+    <Compile Include="ConfigurationStatistics.cs" />
+    <Compile Include="Connection.cs" />
+    <Compile Include="XMLDB3\Objects\COStockInfo.cs" />
+    <Compile Include="XMLDB3\Objects\CountryReport.cs" />
+    <Compile Include="XMLDB3\Objects\DungeonRank.cs" />
+    <Compile Include="XMLDB3\Objects\DungeonRankList.cs" />
+    <Compile Include="XMLDB3\Objects\Ego.cs" />
+    <Compile Include="Enums.cs" />
+    <Compile Include="XMLDB3\Objects\EquipmentCollectionBase.cs" />
+    <Compile Include="XMLDB3\Objects\Event.cs" />
+    <Compile Include="XMLDB3\Objects\EventList.cs" />
+    <Compile Include="XMLDB3\Objects\FamilyList.cs" />
+    <Compile Include="XMLDB3\Objects\FamilyListFamily.cs" />
+    <Compile Include="XMLDB3\Objects\FamilyListFamilyMember.cs" />
+    <Compile Include="XMLDB3\Objects\Farm.cs" />
+    <Compile Include="XMLDB3\Objects\GoldLog.cs" />
+    <Compile Include="XMLDB3\Objects\GoldLogList.cs" />
+    <Compile Include="XMLDB3\Objects\GroupID.cs" />
+    <Compile Include="XMLDB3\Objects\GroupIDList.cs" />
+    <Compile Include="XMLDB3\Objects\GS_Commerce.cs" />
+    <Compile Include="XMLDB3\Objects\GS_CommerceInfo.cs" />
+    <Compile Include="XMLDB3\Objects\Guild.cs" />
+    <Compile Include="XMLDB3\Objects\GuildIDList.cs" />
+    <Compile Include="XMLDB3\Objects\GuildIDPool.cs" />
+    <Compile Include="XMLDB3\Objects\GuildMember.cs" />
+    <Compile Include="XMLDB3\Objects\GuildRobe.cs" />
+    <Compile Include="XMLDB3\Objects\GuildStone.cs" />
+    <Compile Include="XMLDB3\Objects\HelpPointRank.cs" />
+    <Compile Include="XMLDB3\Objects\HelpPointRankList.cs" />
+    <Compile Include="XMLDB3\Objects\House.cs" />
+    <Compile Include="XMLDB3\Objects\HouseBid.cs" />
+    <Compile Include="XMLDB3\Objects\HouseBidder.cs" />
+    <Compile Include="XMLDB3\Objects\HouseBlock.cs" />
+    <Compile Include="XMLDB3\Objects\HouseBlockList.cs" />
+    <Compile Include="XMLDB3\Objects\HouseInventory.cs" />
+    <Compile Include="XMLDB3\Objects\HouseItem.cs" />
+    <Compile Include="XMLDB3\Objects\IDPool.cs" />
+    <Compile Include="XMLDB3\Objects\InviteEvent.cs" />
+    <Compile Include="XMLDB3\Objects\InviteEventList.cs" />
+    <Compile Include="XMLDB3\Objects\Item.cs" />
+    <Compile Include="XMLDB3\Objects\Itembase.cs" />
+    <Compile Include="XMLDB3\Objects\ItemIDPool.cs" />
+    <Compile Include="XMLDB3\Objects\ItemList.cs" />
+    <Compile Include="XMLDB3\Objects\ItemOption.cs" />
+    <Compile Include="XMLDB3\Objects\LinkedApCharacter.cs" />
+    <Compile Include="XMLDB3\Objects\LinkedApCharacterList.cs" />
+    <Compile Include="XMLDB3\Objects\LobbyTab.cs" />
+    <Compile Include="XMLDB3\Objects\LobbyTabList.cs" />
+    <Compile Include="XMLDB3\Objects\LoginIDPool.cs" />
+    <Compile Include="XMLDB3\Objects\LogInOutReport.cs" />
+    <Compile Include="XMLDB3\Objects\MailBox.cs" />
+    <Compile Include="XMLDB3\Objects\MailItem.cs" />
+    <Compile Include="XMLDB3\Objects\MembershipStausBilling.cs" />
+    <Compile Include="XMLDB3\Objects\Memo.cs" />
+    <Compile Include="XMLDB3\Objects\MemoCharacter.cs" />
+    <Compile Include="XMLDB3\Objects\MemoContent.cs" />
+    <Compile Include="XMLDB3\Objects\MemoList.cs" />
+    <Compile Include="XMLDB3\Objects\PageData.cs" />
+    <Compile Include="XMLDB3\Objects\PageList.cs" />
+    <Compile Include="XMLDB3\Objects\PawnCoinLog.cs" />
+    <Compile Include="XMLDB3\Objects\PersonalRanking.cs" />
+    <Compile Include="XMLDB3\Objects\PersonalRankingList.cs" />
+    <Compile Include="XMLDB3\Objects\Pet.cs" />
+    <Compile Include="XMLDB3\Objects\PetAppearance.cs" />
+    <Compile Include="XMLDB3\Objects\PetCondition.cs" />
+    <Compile Include="XMLDB3\Objects\PetData.cs" />
+    <Compile Include="XMLDB3\Objects\PetMacroChecker.cs" />
+    <Compile Include="XMLDB3\Objects\PetMemory.cs" />
+    <Compile Include="XMLDB3\Objects\PetParameter.cs" />
+    <Compile Include="XMLDB3\Objects\PetParameterEx.cs" />
+    <Compile Include="XMLDB3\Objects\PetPrivate.cs" />
+    <Compile Include="XMLDB3\Objects\PetPrivateRegistered.cs" />
+    <Compile Include="XMLDB3\Objects\PetPrivateReserved.cs" />
+    <Compile Include="XMLDB3\Objects\PetSkill.cs" />
+    <Compile Include="XMLDB3\Objects\PetSummon.cs" />
+    <Compile Include="XMLDB3\Objects\Posts.cs" />
+    <Compile Include="XMLDB3\Objects\PostsList.cs" />
+    <Compile Include="XMLDB3\Objects\PrivateFarmFacilityIdPool.cs" />
+    <Compile Include="XMLDB3\Objects\PrivateFarmRecommend.cs" />
+    <Compile Include="XMLDB3\Objects\PrivateFarmRecommendList.cs" />
+    <Compile Include="XMLDB3\Objects\PromotionRecord.cs" />
+    <Compile Include="XMLDB3\Objects\PromotionRecordTable.cs" />
+    <Compile Include="XMLDB3\Objects\Prop.cs" />
+    <Compile Include="Properties\AssemblyInfo.cs" />
+    <Compile Include="XMLDB3\Objects\PropEvent.cs" />
+    <Compile Include="XMLDB3\Objects\PropIDList.cs" />
+    <Compile Include="XMLDB3\Objects\PropIDPool.cs" />
+    <Compile Include="XMLDB3\Objects\Quest.cs" />
+    <Compile Include="XMLDB3\Objects\QuestObjective.cs" />
+    <Compile Include="XMLDB3\Objects\Recommend.cs" />
+    <Compile Include="XMLDB3\Objects\RecommendList.cs" />
+    <Compile Include="XMLDB3\Objects\RoyalAlchemist.cs" />
+    <Compile Include="XMLDB3\Objects\RoyalAlchemistList.cs" />
+    <Compile Include="XMLDB3\Objects\Ruin.cs" />
+    <Compile Include="XMLDB3\Objects\RuinList.cs" />
+    <Compile Include="XMLDB3\Objects\ScrapBook.cs" />
+    <Compile Include="XMLDB3\Objects\ScrapBookData.cs" />
+    <Compile Include="XMLDB3\Objects\ShopAdvertise.cs" />
+    <Compile Include="XMLDB3\Objects\ShopAdvertisebase.cs" />
+    <Compile Include="XMLDB3\Objects\ShopAdvertiseDetail.cs" />
+    <Compile Include="XMLDB3\Objects\ShopAdvertiseItem.cs" />
+    <Compile Include="XMLDB3\Objects\ShopAdvertiseItembase.cs" />
+    <Compile Include="XMLDB3\Objects\ShopAdvertiseItemDetail.cs" />
+    <Compile Include="XMLDB3\Objects\ShopAdvertiseList.cs" />
+    <Compile Include="XMLDB3\Objects\SoulMate.cs" />
+    <Compile Include="XMLDB3\Objects\SoulMateList.cs" />
+    <Compile Include="XMLDB3\Objects\Wine.cs" />
+    <Compile Include="XMLDB3\Objects\WorldMeta.cs" />
+    <Compile Include="XMLDB3\Objects\WorldMetaList.cs" />
+    <Compile Include="XMLDB.cs" />
+    <Compile Include="XMLDB3.ItemMarket\IMAdministratorAccountChange.cs" />
+    <Compile Include="XMLDB3.ItemMarket\IMAdministratorAccountChangeResponse.cs" />
+    <Compile Include="XMLDB3.ItemMarket\IMCheckBalanceCommand.cs" />
+    <Compile Include="XMLDB3.ItemMarket\IMCheckBalanceResponse.cs" />
+    <Compile Include="XMLDB3.ItemMarket\IMCheckEnteranceCommand.cs" />
+    <Compile Include="XMLDB3.ItemMarket\IMCheckEnteranceResponse.cs" />
+    <Compile Include="XMLDB3.ItemMarket\IMGetItemCommand.cs" />
+    <Compile Include="XMLDB3.ItemMarket\IMGetItemCommitCommand.cs" />
+    <Compile Include="XMLDB3.ItemMarket\IMGetItemCommitResponse.cs" />
+    <Compile Include="XMLDB3.ItemMarket\IMGetItemResponse.cs" />
+    <Compile Include="XMLDB3.ItemMarket\IMGetItemRollbackCommand.cs" />
+    <Compile Include="XMLDB3.ItemMarket\IMGetItemRollbackResponse.cs" />
+    <Compile Include="XMLDB3.ItemMarket\IMHeartbeatCommand.cs" />
+    <Compile Include="XMLDB3.ItemMarket\IMHeartbeatResponse.cs" />
+    <Compile Include="XMLDB3.ItemMarket\IMInitializeCommand.cs" />
+    <Compile Include="XMLDB3.ItemMarket\IMInitializeResponse.cs" />
+    <Compile Include="XMLDB3.ItemMarket\IMInquiryMyPageCommand.cs" />
+    <Compile Include="XMLDB3.ItemMarket\IMInquiryMyPageResponse.cs" />
+    <Compile Include="XMLDB3.ItemMarket\IMInquirySaleItemCommand.cs" />
+    <Compile Include="XMLDB3.ItemMarket\IMInquirySaleItemResponse.cs" />
+    <Compile Include="XMLDB3.ItemMarket\IMInquiryStorageCommand.cs" />
+    <Compile Include="XMLDB3.ItemMarket\IMInquiryStorageResponse.cs" />
+    <Compile Include="XMLDB3.ItemMarket\IMItemListCommand.cs" />
+    <Compile Include="XMLDB3.ItemMarket\IMItemListResponse.cs" />
+    <Compile Include="XMLDB3.ItemMarket\IMItemSearchCommand.cs" />
+    <Compile Include="XMLDB3.ItemMarket\IMItemSearchResponse.cs" />
+    <Compile Include="XMLDB3.ItemMarket\IMMessage.cs" />
+    <Compile Include="XMLDB3.ItemMarket\IMPurchaseCommand.cs" />
+    <Compile Include="XMLDB3.ItemMarket\IMPurchaseResponse.cs" />
+    <Compile Include="XMLDB3.ItemMarket\IMResult.cs" />
+    <Compile Include="XMLDB3.ItemMarket\IMSaleCancelCommand.cs" />
+    <Compile Include="XMLDB3.ItemMarket\IMSaleCancelResponse.cs" />
+    <Compile Include="XMLDB3.ItemMarket\IMSaleRequestCommand.cs" />
+    <Compile Include="XMLDB3.ItemMarket\IMSaleRequestCommitCommmand.cs" />
+    <Compile Include="XMLDB3.ItemMarket\IMSaleRequestCommitResponse.cs" />
+    <Compile Include="XMLDB3.ItemMarket\IMSaleRequestResponse.cs" />
+    <Compile Include="XMLDB3.ItemMarket\IMSaleRequestRollbackCommand.cs" />
+    <Compile Include="XMLDB3.ItemMarket\IMSaleRequestRollbackResponse.cs" />
+    <Compile Include="XMLDB3.ItemMarket\IMSortingType.cs" />
+    <Compile Include="XMLDB3.ItemMarket\IMStorageType.cs" />
+    <Compile Include="XMLDB3.ItemMarket\ItemMarketClient.cs" />
+    <Compile Include="XMLDB3.ItemMarket\ItemMarketCommand.cs" />
+    <Compile Include="XMLDB3.ItemMarket\ItemMarketHandler.cs" />
+    <Compile Include="XMLDB3.ItemMarket\ItemMarketManager.cs" />
+    <Compile Include="XMLDB3.ItemMarket\ItemMarketResponse.cs" />
+    <Compile Include="XMLDB3.ItemMarket\PacketHelper.cs" />
+    <Compile Include="XMLDB3.ItemMarket\Query.cs" />
+    <Compile Include="XMLDB3.ItemMarket\QueryManager.cs" />
+    <Compile Include="XMLDB3.ItemMarket\SortTypeHelper.cs" />
+    <Compile Include="XMLDB3.Procedure.Command.Account\AccountListNxjCommand.cs" />
+    <Compile Include="XMLDB3.Procedure.Command.Account\CreateAccountNxjCommand.cs" />
+    <Compile Include="XMLDB3\Serializers\Account2PWSerializer.cs" />
+    <Compile Include="XMLDB3\SQL\Adapters\CastleAdapter.cs" />
+    <Compile Include="XMLDB3\SQL\Adapters\ChannelingKeyPoolAdapter.cs" />
+    <Compile Include="XMLDB3\SQL\QueryManager.cs" />
+    <Compile Include="XMLDB3\Commands\AccountActivationCommand.cs" />
+    <Compile Include="XMLDB3\SQL\Adapters\AccountActivationAdapter.cs" />
+    <Compile Include="XMLDB3\Commands\AccountBanCommand.cs" />
+    <Compile Include="XMLDB3\Commands\AccountCreateCommand.cs" />
+    <Compile Include="XMLDB3\Commands\AccountRead2PWCommand.cs" />
+    <Compile Include="XMLDB3\Commands\AccountReadCommand.cs" />
+    <Compile Include="XMLDB3\Commands\AccountrefCreateCommand.cs" />
+    <Compile Include="XMLDB3\Commands\AccountrefLobbyUpdateCommand.cs" />
+    <Compile Include="XMLDB3\Commands\AccountrefReadCommand.cs" />
+    <Compile Include="XMLDB3\Commands\AccountRefSelectMabiIdCommand.cs" />
+    <Compile Include="XMLDB3\Serializers\AccountrefSerializer.cs" />
+    <Compile Include="XMLDB3\SQL\Adapters\AccountRefAdapter.cs" />
+    <Compile Include="XMLDB3\Commands\AccountRefUpdateFlagCommand.cs" />
+    <Compile Include="XMLDB3\Commands\AccountRefUpdateMetaCommand.cs" />
+    <Compile Include="XMLDB3\Serializers\AccountSerializer.cs" />
+    <Compile Include="XMLDB3\SQL\Adapters\AccountAdapter.cs" />
+    <Compile Include="XMLDB3\Commands\AccountUnbanCommand.cs" />
+    <Compile Include="XMLDB3\Commands\AccountUpdateSecondaryPasswordCommand.cs" />
+    <Compile Include="XMLDB3\Commands\AccountUpdateSecondaryPasswordMissCountCommand.cs" />
+    <Compile Include="XMLDB3\ObjectBuilders\AchievementObjectBuilder.cs" />
+    <Compile Include="XMLDB3\Sql Builder\AchievementUpdateBuilder.cs" />
+    <Compile Include="XMLDB3\Commands\AdministratorAccountChangeCommand.cs" />
+    <Compile Include="XMLDB3\ObjectBuilders\AppearanceObjectBuilder.cs" />
+    <Compile Include="XMLDB3\Sql Builder\AppearanceUpdateBuilder.cs" />
+    <Compile Include="XMLDB3\ObjectBuilders\ArbeitObjectBuilder.cs" />
+    <Compile Include="XMLDB3\Sql Builder\ArbeitUpdateBuilder.cs" />
+    <Compile Include="XMLDB3\Objects\Bank.cs" />
+    <Compile Include="XMLDB3\Objects\BankCache.cs" />
+    <Compile Include="XMLDB3\Commands\BankQueryPasswordCommand.cs" />
+    <Compile Include="XMLDB3\Commands\BankReadCommand.cs" />
+    <Compile Include="XMLDB3\Serializers\BankSerializer.cs" />
+    <Compile Include="XMLDB3\Objects\BankSlot.cs" />
+    <Compile Include="XMLDB3\Utilities\BankSlotComparer.cs" />
+    <Compile Include="XMLDB3\SQL\Adapters\BankAdapter.cs" />
+    <Compile Include="XMLDB3\Sql Builder\BankUpdateBuilder.cs" />
+    <Compile Include="XMLDB3\Commands\BankUpdateCommand.cs" />
+    <Compile Include="XMLDB3\Commands\BankUpdateExCommand.cs" />
+    <Compile Include="XMLDB3\BasicCache.cs" />
+    <Compile Include="XMLDB3\Commands\BasicCommand.cs" />
+    <Compile Include="XMLDB3\SQL\Adapters\BestCookAdapter.cs" />
+    <Compile Include="XMLDB3\Commands\BidAddCommand.cs" />
+    <Compile Include="XMLDB3\Commands\BidIdPoolCommand.cs" />
+    <Compile Include="XMLDB3\SQL\Adapters\BidIdPoolAdapter.cs" />
+    <Compile Include="XMLDB3\Serializers\BidListSerializer.cs" />
+    <Compile Include="XMLDB3\Commands\BidReadCommand.cs" />
+    <Compile Include="XMLDB3\Commands\BidRemoveCommand.cs" />
+    <Compile Include="XMLDB3\Serializers\BidSerializer.cs" />
+    <Compile Include="XMLDB3\SQL\Adapters\BidAdapter.cs" />
+    <Compile Include="XMLDB3\Commands\BidUpdateCommand.cs" />
+    <Compile Include="XMLDB3\Utilities\CAccountMetaHelper.cs" />
+    <Compile Include="XMLDB3\CacheStatistics.cs" />
+    <Compile Include="XMLDB3\Commands\CastleBidderCreateCommand.cs" />
+    <Compile Include="XMLDB3\Commands\CastleBidderDeleteCommand.cs" />
+    <Compile Include="XMLDB3\Serializers\CastleBidderSerializer.cs" />
+    <Compile Include="XMLDB3\Commands\CastleBidderUpdateCommand.cs" />
+    <Compile Include="XMLDB3\Commands\CastleBidEndCommand.cs" />
+    <Compile Include="XMLDB3\Serializers\CastleBidSerializer.cs" />
+    <Compile Include="XMLDB3\Commands\CastleBidStartCommand.cs" />
+    <Compile Include="XMLDB3\Serializers\CastleBlockSerializer.cs" />
+    <Compile Include="XMLDB3\Commands\CastleBlockUpdateCommand.cs" />
+    <Compile Include="XMLDB3\Commands\CastleBuildItemUpdateCommand.cs" />
+    <Compile Include="XMLDB3\Serializers\CastleBuildResourceSerializer.cs" />
+    <Compile Include="XMLDB3\Serializers\CastleBuildSerializer.cs" />
+    <Compile Include="XMLDB3\Commands\CastleBuildUpdateCommand.cs" />
+    <Compile Include="XMLDB3\Commands\CastleGuildMoneyGiveCommand.cs" />
+    <Compile Include="XMLDB3\Commands\CastleGuildMoneyTakeCommand.cs" />
+    <Compile Include="XMLDB3\ObjectBuilders\CastleListObjectBuilder.cs" />
+    <Compile Include="XMLDB3\Commands\CastleListReadCommand.cs" />
+    <Compile Include="XMLDB3\Serializers\CastleListSerializer.cs" />
+    <Compile Include="XMLDB3\Serializers\CastleSerializer.cs" />
+    <Compile Include="XMLDB3\Commands\CastleUpdateCommand.cs" />
+    <Compile Include="XMLDB3\Sql Builder\CDBAPI.cs" />
+    <Compile Include="XMLDB3\Commands\ChannelingKeyPoolCheckAndInsertComand.cs" />
+    <Compile Include="XMLDB3\Serializers\ChannelingKeyPoolSerializer.cs" />
+    <Compile Include="XMLDB3\CreateBuilder\CharacterCreateBuilder.cs" />
+    <Compile Include="XMLDB3\Commands\CharacterCreateCommand.cs" />
+    <Compile Include="XMLDB3\Commands\CharacterDeleteCommand.cs" />
+    <Compile Include="XMLDB3\Commands\CharacterDeleteRsvCommand.cs" />
+    <Compile Include="XMLDB3\Commands\CharacterGetWriteCounterCommand.cs" />
+    <Compile Include="XMLDB3\Commands\CharacterIdPoolCommand.cs" />
+    <Compile Include="XMLDB3\Objects\CharacterInfo.cs" />
+    <Compile Include="XMLDB3\Commands\CharacterInsertMetaCommand.cs" />
+    <Compile Include="XMLDB3\Commands\CharacterItemDeleteCommand.cs" />
+    <Compile Include="XMLDB3\Commands\CharacterNameUsableCommand.cs" />
+    <Compile Include="XMLDB3\ObjectBuilders\CharacterObjectBuilder.cs" />
+    <Compile Include="XMLDB3\Commands\CharacterQueryAccumLevelCommand.cs" />
+    <Compile Include="XMLDB3\Commands\CharacterReadAppearCommand.cs" />
+    <Compile Include="XMLDB3\Commands\CharacterReadCommand.cs" />
+    <Compile Include="XMLDB3\Commands\CharacterReviveCommand.cs" />
+    <Compile Include="XMLDB3\Serializers\CharacterSerializer.cs" />
+    <Compile Include="XMLDB3\SQL\Adapters\CharacterAdapter.cs" />
+    <Compile Include="XMLDB3\Sql Builder\CharacterUpdateBuilder.cs" />
+    <Compile Include="XMLDB3\Commands\CharacterUpdateCommand.cs" />
+    <Compile Include="XMLDB3\character_meta_row.cs" />
+    <Compile Include="XMLDB3\SQL\Adapters\CharIdPoolAdapter.cs" />
+    <Compile Include="XMLDB3\Commands\CheckBalanceCommand.cs" />
+    <Compile Include="XMLDB3\Commands\CheckCacheKeyCommand.cs" />
+    <Compile Include="XMLDB3\Commands\CheckEntranceCommand.cs" />
+    <Compile Include="XMLDB3\ChronicleCache.cs" />
+    <Compile Include="XMLDB3\ObjectBuilders\ChronicleCacheBuilder.cs" />
+    <Compile Include="XMLDB3\Commands\ChronicleCreateCommand.cs" />
+    <Compile Include="XMLDB3\ObjectBuilders\ChronicleInfoBuilder.cs" />
+    <Compile Include="XMLDB3\Commands\ChronicleInfoInitCommand.cs" />
+    <Compile Include="XMLDB3\Serializers\ChronicleInfoListSerializer.cs" />
+    <Compile Include="XMLDB3\Serializers\ChronicleSerializer.cs" />
+    <Compile Include="XMLDB3\SQL\Adapters\ChronicleAdapter.cs" />
+    <Compile Include="XMLDB3\Utilities\CMetaHelper.cs" />
+    <Compile Include="XMLDB3\CollectionItemComparer.cs" />
+    <Compile Include="XMLDB3\CommandCache.cs" />
+    <Compile Include="XMLDB3\CommandQueue.cs" />
+    <Compile Include="XMLDB3\CommandRedirection.cs" />
+    <Compile Include="XMLDB3\Serializers\CommandSerializer.cs" />
+    <Compile Include="XMLDB3\CommandStatistics.cs" />
+    <Compile Include="XMLDB3\Commands\CommerceCriminalBossDie.cs" />
+    <Compile Include="XMLDB3\Commands\CommerceCriminalReadALL.cs" />
+    <Compile Include="XMLDB3\Sql Builder\CommerceCriminalRemoveBossBuilder.cs" />
+    <Compile Include="XMLDB3\Sql Builder\CommerceCriminalRewardUpdateBuilder.cs" />
+    <Compile Include="XMLDB3\SQL\Adapters\CommerceCriminalAdapter.cs" />
+    <Compile Include="XMLDB3\Commands\CommerceCriminalUpdate.cs" />
+    <Compile Include="XMLDB3\Sql Builder\CommerceCriminalUpdateBuilder.cs" />
+    <Compile Include="XMLDB3\Sql Builder\CommerceCurrentTransportUpdateBuilder.cs" />
+    <Compile Include="XMLDB3\Sql Builder\CommerceDucatUpdateBuilder.cs" />
+    <Compile Include="XMLDB3\Sql Builder\CommerceLostPercentUpdateBuilder.cs" />
+    <Compile Include="XMLDB3\Sql Builder\CommercePostCreditUpdateBuilder.cs" />
+    <Compile Include="XMLDB3\Sql Builder\CommercePurchasedProductUpdateBuilder.cs" />
+    <Compile Include="XMLDB3\Commands\CommerceQueryDucat.cs" />
+    <Compile Include="XMLDB3\Commands\CommerceQueryInfo.cs" />
+    <Compile Include="XMLDB3\Commands\CommerceReadAll.cs" />
+    <Compile Include="XMLDB3\Commands\CommerceRemoveAllProduct.cs" />
+    <Compile Include="XMLDB3\Commands\CommerceSellProduct.cs" />
+    <Compile Include="XMLDB3\Sql Builder\CommerceSystemPostUpdateBuilder.cs" />
+    <Compile Include="XMLDB3\Sql Builder\CommerceSystemProductStockUpdateBuilder.cs" />
+    <Compile Include="XMLDB3\Sql Builder\CommerceSystemProductUpdateBuilder.cs" />
+    <Compile Include="XMLDB3\Commands\CommerceSystemReadALL.cs" />
+    <Compile Include="XMLDB3\SQL\Adapters\CommerceSystemAdapter.cs" />
+    <Compile Include="XMLDB3\Commands\CommerceSystemUpdateALL.cs" />
+    <Compile Include="XMLDB3\Sql Builder\CommerceUnlockTransportUpdateBuilder.cs" />
+    <Compile Include="XMLDB3\Commands\CommerceUpdateInfo.cs" />
+    <Compile Include="XMLDB3\Commands\CommerceUpdateProduct.cs" />
+    <Compile Include="XMLDB3\Commands\CommerceUpdateTransport.cs" />
+    <Compile Include="XMLDB3\ObjectBuilders\ConditionObjectBuilder.cs" />
+    <Compile Include="XMLDB3\Sql Builder\ConditionUpdateBuilder.cs" />
+    <Compile Include="XMLDB3\ConfigManager.cs" />
+    <Compile Include="XMLDB3\Commands\CountryCCUReportCommand.cs" />
+    <Compile Include="XMLDB3\Serializers\CountryReportSerializer.cs" />
+    <Compile Include="XMLDB3\SQL\Adapters\CountryReportAdapter.cs" />
+    <Compile Include="XMLDB3\Commands\CreateAccountNxKCommand.cs" />
+    <Compile Include="XMLDB3\ObjectBuilders\DataObjectBuilder.cs" />
+    <Compile Include="XMLDB3\ObjectBuilders\DeedObejctBuilder.cs" />
+    <Compile Include="XMLDB3\Sql Builder\DeedUpdateBuilder.cs" />
+    <Compile Include="XMLDB3\ObjectBuilders\DivineKnightObjectBuilder.cs" />
+    <Compile Include="XMLDB3\Sql Builder\DivineKnightUpdateBuilder.cs" />
+    <Compile Include="XMLDB3\ObjectBuilders\DonationObjectBuilder.cs" />
+    <Compile Include="XMLDB3\Sql Builder\DonationUpdateBuilder.cs" />
+    <Compile Include="XMLDB3\Serializers\DungeonRankSerializer.cs" />
+    <Compile Include="XMLDB3\SQL\Adapters\DungeonRankAdapter.cs" />
+    <Compile Include="XMLDB3\Commands\DungeonRankUpdateCommand.cs" />
+    <Compile Include="XMLDB3\Objects\EquipmentCollection.cs" />
+    <Compile Include="XMLDB3\EquipmentCollectionCache.cs" />
+    <Compile Include="XMLDB3\ObjectBuilders\EquipmentCollectionCountListBuilder.cs" />
+    <Compile Include="XMLDB3\Serializers\EquipmentCollectionCountListSerializer.cs" />
+    <Compile Include="XMLDB3\ObjectBuilders\EquipmentCollectionObjectBuilder.cs" />
+    <Compile Include="XMLDB3\Commands\EquipmentCollectionRankCountListReadCommand.cs" />
+    <Compile Include="XMLDB3\Commands\EquipmentCollectionReadCommand.cs" />
+    <Compile Include="XMLDB3\Serializers\EquipmentCollectionSerializer.cs" />
+    <Compile Include="XMLDB3\SQL\Adapters\EquipmentCollectionAdapter.cs" />
+    <Compile Include="XMLDB3\Sql Builder\EquipmentCollectionUpdateBuilder.cs" />
+    <Compile Include="XMLDB3\Commands\EquipmentCollectionUpdateCommand.cs" />
+    <Compile Include="XMLDB3\Commands\EquipmentCollectionUpdateExCommand.cs" />
+    <Compile Include="XMLDB3\Serializers\EventListSerializer.cs" />
+    <Compile Include="XMLDB3\EventLogger.cs" />
+    <Compile Include="XMLDB3\Serializers\EventSerializer.cs" />
+    <Compile Include="XMLDB3\SQL\Adapters\EventAdapter.cs" />
+    <Compile Include="XMLDB3\Commands\EventUpdateCommand.cs" />
+    <Compile Include="XMLDB3\ExceptionMonitor.cs" />
+    <Compile Include="XMLDB3\Commands\FacilitydPoolCommand.cs" />
+    <Compile Include="XMLDB3\SQL\Adapters\FacilityIdPoolAdapter.cs" />
+    <Compile Include="XMLDB3\Commands\FamilyAddCommand.cs" />
+    <Compile Include="XMLDB3\Commands\FamilyAddMemberCommand.cs" />
+    <Compile Include="XMLDB3\Serializers\FamilyListSerializer.cs" />
+    <Compile Include="XMLDB3\Serializers\FamilyMemberSerializer.cs" />
+    <Compile Include="XMLDB3\Commands\FamilyReadCommand.cs" />
+    <Compile Include="XMLDB3\Commands\FamilyReadListCommand.cs" />
+    <Compile Include="XMLDB3\Commands\FamilyRemoveCommand.cs" />
+    <Compile Include="XMLDB3\Commands\FamilyRemoveMemberCommand.cs" />
+    <Compile Include="XMLDB3\Serializers\FamilySerializer.cs" />
+    <Compile Include="XMLDB3\SQL\Adapters\FamilyAdapter.cs" />
+    <Compile Include="XMLDB3\Commands\FamilyUpdateCommand.cs" />
+    <Compile Include="XMLDB3\Commands\FamilyUpdateMemberCommand.cs" />
+    <Compile Include="XMLDB3\Commands\FarmAccountOwnCommand.cs" />
+    <Compile Include="XMLDB3\Commands\FarmExpireCommand.cs" />
+    <Compile Include="XMLDB3\Commands\FarmLeaseCommand.cs" />
+    <Compile Include="XMLDB3\ObjectBuilders\FarmObjectBuilder.cs" />
+    <Compile Include="XMLDB3\Commands\FarmReadCommand.cs" />
+    <Compile Include="XMLDB3\Serializers\FarmSerializer.cs" />
+    <Compile Include="XMLDB3\SQL\Adapters\FarmAdapter.cs" />
+    <Compile Include="XMLDB3\Sql Builder\FarmUpdateBuilder.cs" />
+    <Compile Include="XMLDB3\Commands\FarmUpdateCommand.cs" />
+    <Compile Include="XMLDB3\ObjectBuilders\FavoritePrivateFarmObjectBuilder.cs" />
+    <Compile Include="XMLDB3\Sql Builder\FavoritePrivateFarmSqlBuilder.cs" />
+    <Compile Include="XMLDB3\Sql Builder\FavoritePrivateFarmUpdateBuilder.cs" />
+    <Compile Include="XMLDB3\Commands\GetItemCommand.cs" />
+    <Compile Include="XMLDB3\Commands\GetItemCommitCommand.cs" />
+    <Compile Include="XMLDB3\Commands\GetItemRollbackCommand.cs" />
+    <Compile Include="XMLDB3\Commands\GoldLogInsert.cs" />
+    <Compile Include="XMLDB3\Serializers\GoldLogSerializer.cs" />
+    <Compile Include="XMLDB3\SQL\Adapters\GoldLogAdapter.cs" />
+    <Compile Include="XMLDB3\Serializers\GroupIDListSerializer.cs" />
+    <Compile Include="XMLDB3\SQL\Adapters\GS_CommerceAdapter.cs" />
+    <Compile Include="XMLDB3\Commands\GuildBattleGroundTypeClearCommand.cs" />
+    <Compile Include="XMLDB3\Commands\GuildBattleGroundTypeUpdateCommand.cs" />
+    <Compile Include="XMLDB3\Commands\GuildBattleGroundWinnerTypeUpdateCommand.cs" />
+    <Compile Include="XMLDB3\CreateBuilder\GuildCreateBuilder.cs" />
+    <Compile Include="XMLDB3\Commands\GuildCreateCommand.cs" />
+    <Compile Include="XMLDB3\Commands\GuildDeleteCommand.cs" />
+    <Compile Include="XMLDB3\Commands\GuildDrawMoneyCommand.cs" />
+    <Compile Include="XMLDB3\Commands\GuildGetJoinedMemberCountCommand.cs" />
+    <Compile Include="XMLDB3\Serializers\GuildIDListSerializer.cs" />
+    <Compile Include="XMLDB3\Commands\GuildIdPoolCommand.cs" />
+    <Compile Include="XMLDB3\SQL\Adapters\GuildIdPoolAdapter.cs" />
+    <Compile Include="XMLDB3\Commands\GuildListGetCommand.cs" />
+    <Compile Include="XMLDB3\Commands\GuildMemberAddCommand.cs" />
+    <Compile Include="XMLDB3\Commands\GuildMemberCheckJointimeCommand.cs" />
+    <Compile Include="XMLDB3\Commands\GuildMoneyAddCommand.cs" />
+    <Compile Include="XMLDB3\Commands\GuildNameUsableCommand.cs" />
+    <Compile Include="XMLDB3\Commands\GuildPointAddCommand.cs" />
+    <Compile Include="XMLDB3\Commands\GuildReadCommand.cs" />
+    <Compile Include="XMLDB3\Commands\GuildRobeDeleteCommand.cs" />
+    <Compile Include="XMLDB3\Serializers\GuildRobeSerializer.cs" />
+    <Compile Include="XMLDB3\Commands\GuildRobeUpdateCommand.cs" />
+    <Compile Include="XMLDB3\Serializers\GuildSerializer.cs" />
+    <Compile Include="XMLDB3\SQL\Adapters\GuildAdapter.cs" />
+    <Compile Include="XMLDB3\Commands\GuildStatusUpdateCommand.cs" />
+    <Compile Include="XMLDB3\Commands\GuildStoneAddCommand.cs" />
+    <Compile Include="XMLDB3\Commands\GuildStoneChangeCommand.cs" />
+    <Compile Include="XMLDB3\Commands\GuildStoneDeleteCommand.cs" />
+    <Compile Include="XMLDB3\Serializers\GuildStoneSerializer.cs" />
+    <Compile Include="XMLDB3\Commands\GuildTransferMasterCommand.cs" />
+    <Compile Include="XMLDB3\Commands\GuildUpdateCommand.cs" />
+    <Compile Include="XMLDB3\Commands\GuildUpdateTitleCommand.cs" />
+    <Compile Include="XMLDB3\ObjectBuilders\HeartStickerObjectBuilder.cs" />
+    <Compile Include="XMLDB3\Sql Builder\HeartStickerUpdateBuilder.cs" />
+    <Compile Include="XMLDB3\Commands\HelpPointRankDecreasePointCommand.cs" />
+    <Compile Include="XMLDB3\Commands\HelpPointRankListLoadCommand.cs" />
+    <Compile Include="XMLDB3\Serializers\HelpPointRankListSerializer.cs" />
+    <Compile Include="XMLDB3\Serializers\HelpPointRankSerializer.cs" />
+    <Compile Include="XMLDB3\SQL\Adapters\HelpPointRankAdapter.cs" />
+    <Compile Include="XMLDB3\Commands\HelpPointRankUpdateCommand.cs" />
+    <Compile Include="XMLDB3\Serializers\HouseAppearSerializer.cs" />
+    <Compile Include="XMLDB3\Commands\HouseBidderAutoRepayCommand.cs" />
+    <Compile Include="XMLDB3\Commands\HouseBidderCreateCommand.cs" />
+    <Compile Include="XMLDB3\Commands\HouseBidderDeleteCommand.cs" />
+    <Compile Include="XMLDB3\Serializers\HouseBidderSerializer.cs" />
+    <Compile Include="XMLDB3\Commands\HouseBidEndCommand.cs" />
+    <Compile Include="XMLDB3\Commands\HouseBidRepayEndCommand.cs" />
+    <Compile Include="XMLDB3\Serializers\HouseBidSerializer.cs" />
+    <Compile Include="XMLDB3\Commands\HouseBidStartCommand.cs" />
+    <Compile Include="XMLDB3\Commands\HouseBlockDeleteCommand.cs" />
+    <Compile Include="XMLDB3\ObjectBuilders\HouseBlockObjectBuilder.cs" />
+    <Compile Include="XMLDB3\Commands\HouseBlockReadCommand.cs" />
+    <Compile Include="XMLDB3\Serializers\HouseBlockSerializer.cs" />
+    <Compile Include="XMLDB3\Commands\HouseBlockUpdateCommand.cs" />
+    <Compile Include="XMLDB3\ObjectBuilders\HouseInventoryObjectBuilder.cs" />
+    <Compile Include="XMLDB3\Serializers\HouseInventorySerializer.cs" />
+    <Compile Include="XMLDB3\Commands\HouseItemDeleteCommand.cs" />
+    <Compile Include="XMLDB3\Commands\HouseItemReadCommand.cs" />
+    <Compile Include="XMLDB3\Serializers\HouseItemSerializer.cs" />
+    <Compile Include="XMLDB3\Commands\HouseItemUpdateCommand.cs" />
+    <Compile Include="XMLDB3\ObjectBuilders\HouseObjectBuilder.cs" />
+    <Compile Include="XMLDB3\Commands\HouseOwnerDeleteCommand.cs" />
+    <Compile Include="XMLDB3\Commands\HouseReadCommand.cs" />
+    <Compile Include="XMLDB3\Serializers\HouseSerializer.cs" />
+    <Compile Include="XMLDB3\SQL\Adapters\HouseAdapter.cs" />
+    <Compile Include="XMLDB3\Commands\HouseUpdateCommand.cs" />
+    <Compile Include="XMLDB3\Commands\HuskyCallProcedureCommand.cs" />
+    <Compile Include="XMLDB3\SQL\Adapters\HuskyAdapter.cs" />
+    <Compile Include="XMLDB3\ICacheItem.cs" />
+    <Compile Include="XMLDB3\IEncryptionMethod.cs" />
+    <Compile Include="XMLDB3\IKeyFinder.cs" />
+    <Compile Include="XMLDB3\ILinkItem.cs" />
+    <Compile Include="XMLDB3\ILock.cs" />
+    <Compile Include="XMLDB3\Commands\InquiryMyPageCommand.cs" />
+    <Compile Include="XMLDB3\Commands\InquirySaleItemCommand.cs" />
+    <Compile Include="XMLDB3\Commands\InquiryStorageCommand.cs" />
+    <Compile Include="XMLDB3\CreateBuilder\InventoryCreateBuilder.cs" />
+    <Compile Include="XMLDB3\Objects\InventoryHash.cs" />
+    <Compile Include="XMLDB3\Utilities\InventoryHashUtility.cs" />
+    <Compile Include="XMLDB3\ObjectBuilders\InventoryObjectBuilder.cs" />
+    <Compile Include="XMLDB3\Serializers\InventorySerializer.cs" />
+    <Compile Include="XMLDB3\Sql Builder\InventoryUpdateBuilder.cs" />
+    <Compile Include="XMLDB3\Commands\InviteEventDeleteCommand.cs" />
+    <Compile Include="XMLDB3\Serializers\InviteEventListSerializer.cs" />
+    <Compile Include="XMLDB3\Commands\InviteEventSelectAllCommand.cs" />
+    <Compile Include="XMLDB3\Serializers\InviteEventSerializer.cs" />
+    <Compile Include="XMLDB3\SQL\Adapters\InviteEventAdapter.cs" />
+    <Compile Include="XMLDB3\Commands\InviteEventUpdateCommand.cs" />
+    <Compile Include="XMLDB3\Utilities\IObjLockRegistHelper.cs" />
+    <Compile Include="XMLDB3\ISection.cs" />
+    <Compile Include="XMLDB3\Commands\ISerializableCommand.cs" />
+    <Compile Include="XMLDB3\Commands\ItemIdPoolCommand.cs" />
+    <Compile Include="XMLDB3\ItemIdPoolMutex.cs" />
+    <Compile Include="XMLDB3\SQL\Adapters\ItemIdPoolAdapter.cs" />
+    <Compile Include="XMLDB3\Commands\ItemListCommand.cs" />
+    <Compile Include="XMLDB3\Serializers\ItemListSerializer.cs" />
+    <Compile Include="XMLDB3\Commands\ItemMarketInfoCommand.cs" />
+    <Compile Include="XMLDB3\ObjectBuilders\ItemObjectBuilder.cs" />
+    <Compile Include="XMLDB3\Sql Builder\ItemParameterBuilder.cs" />
+    <Compile Include="XMLDB3\Commands\ItemPurchaseCommand.cs" />
+    <Compile Include="XMLDB3\Commands\ItemSearchCommand.cs" />
+    <Compile Include="XMLDB3\Serializers\ItemSerializer.cs" />
+    <Compile Include="XMLDB3\Sql Builder\ItemSqlBuilder.cs" />
+    <Compile Include="XMLDB3\Sql Builder\ItemUpdateChecker.cs" />
+    <Compile Include="XMLDB3\Utilities\ItemXmlFieldHelper.cs" />
+    <Compile Include="XMLDB3\ObjectBuilders\JobObjectBuilder.cs" />
+    <Compile Include="XMLDB3\Sql Builder\JobUpdateBuilder.cs" />
+    <Compile Include="XMLDB3\ObjectBuilders\JoustObjectBuilder.cs" />
+    <Compile Include="XMLDB3\Sql Builder\JoustUpdateBuilder.cs" />
+    <Compile Include="XMLDB3\ObjectBuilders\KeywordObjectBuilder.cs" />
+    <Compile Include="XMLDB3\Sql Builder\KeywordUpdateBuilder.cs" />
+    <Compile Include="XMLDB3\Commands\LinkedApCharacterSelect.cs" />
+    <Compile Include="XMLDB3\SQL\Adapters\LinkedApCharacterAdapter.cs" />
+    <Compile Include="XMLDB3\Commands\LinkedApCharacterUpdate.cs" />
+    <Compile Include="XMLDB3\LinkedHybridCache.cs" />
+    <Compile Include="XMLDB3\Serializers\LobbyTabListSerializer.cs" />
+    <Compile Include="XMLDB3\Commands\LoginCommand.cs" />
+    <Compile Include="XMLDB3\Commands\LoginIdPoolCommand.cs" />
+    <Compile Include="XMLDB3\SQL\Adapters\LoginIdPoolAdapter.cs" />
+    <Compile Include="XMLDB3\Commands\LogInOutReportCommand.cs" />
+    <Compile Include="XMLDB3\Serializers\LogInOutReportSerializer.cs" />
+    <Compile Include="XMLDB3\SQL\Adapters\LogInOutReportAdapter.cs" />
+    <Compile Include="XMLDB3\Commands\LogoutCommand.cs" />
+    <Compile Include="XMLDB3\Commands\MabiNovelBoardListLoadCommand.cs" />
+    <Compile Include="XMLDB3\SQL\Adapters\MabiNovelBoardAdapter.cs" />
+    <Compile Include="XMLDB3\Commands\MabiNovelBoardUpdateCheckCommand.cs" />
+    <Compile Include="XMLDB3\Commands\MabiNovelFindTitleCommand.cs" />
+    <Compile Include="XMLDB3\Commands\MabiNovelInsertCommand.cs" />
+    <Compile Include="XMLDB3\Serializers\MabiNovelListSerializer.cs" />
+    <Compile Include="XMLDB3\Serializers\MabiNovelPostsListSerializer.cs" />
+    <Compile Include="XMLDB3\Commands\MabiNovelPostsRoyaltiesListCommand.cs" />
+    <Compile Include="XMLDB3\Serializers\MabiNovelPostsSerializer.cs" />
+    <Compile Include="XMLDB3\Commands\MabiNovelPostsUpdateCommand.cs" />
+    <Compile Include="XMLDB3\Commands\MabiNovelReadCommand.cs" />
+    <Compile Include="XMLDB3\Commands\MabiNovelSelectBoardCommand.cs" />
+    <Compile Include="XMLDB3\Serializers\MabiNovelSerializer.cs" />
+    <Compile Include="XMLDB3\SQL\Adapters\MabiNovelAdapter.cs" />
+    <Compile Include="XMLDB3\ObjectBuilders\MacroCheckerObjectBuilder.cs" />
+    <Compile Include="XMLDB3\Sql Builder\MacroCheckerUpdateBuilder.cs" />
+    <Compile Include="XMLDB3\Serializers\MailBoxSerializer.cs" />
+    <Compile Include="XMLDB3\SQL\Adapters\MailBoxAdapter.cs" />
+    <Compile Include="XMLDB3\Commands\MailCheckCharacterComamnd.cs" />
+    <Compile Include="XMLDB3\Commands\MailDeleteCommand.cs" />
+    <Compile Include="XMLDB3\Commands\MailGetUnreadCountCommand.cs" />
+    <Compile Include="XMLDB3\Serializers\MailItemSeirializer.cs" />
+    <Compile Include="XMLDB3\Commands\MailReadCommand.cs" />
+    <Compile Include="XMLDB3\Commands\MailSendCommand.cs" />
+    <Compile Include="XMLDB3\MailSender.cs" />
+    <Compile Include="XMLDB3\Commands\MailUpdateStatusCommand.cs" />
+    <Compile Include="XMLDB3\MainProcedure.cs" />
+    <Compile Include="XMLDB3\ObjectBuilders\MarriageObjectBuilder.cs" />
+    <Compile Include="XMLDB3\Sql Builder\MarriageUpdateBuilder.cs" />
+    <Compile Include="XMLDB3\Commands\MembershipBillingCheckCommand.cs" />
+    <Compile Include="XMLDB3\ObjectBuilders\MemoryObjectBuilder.cs" />
+    <Compile Include="XMLDB3\Sql Builder\MemoryUpdateBuilder.cs" />
+    <Compile Include="XMLDB3\Commands\MemoSendCommand.cs" />
+    <Compile Include="XMLDB3\Serializers\MemoSerializer.cs" />
+    <Compile Include="XMLDB3\SQL\Adapters\MemoAdapter.cs" />
+    <Compile Include="XMLDB3\MonitorProcedure.cs" />
+    <Compile Include="XMLDB3\ObjectBuilders\MyKnightsObjectBuilder.cs" />
+    <Compile Include="XMLDB3\Sql Builder\MyKnightsUpdateBuilder.cs" />
+    <Compile Include="XMLDB3\ObjectBuilders\ObjectCache.cs" />
+    <Compile Include="XMLDB3\ObjectBuilders\ObjectLock.cs" />
+    <Compile Include="XMLDB3\ObjectBuilders\ParameterExObjectBuilder.cs" />
+    <Compile Include="XMLDB3\Sql Builder\ParameterExUpdateBuilder.cs" />
+    <Compile Include="XMLDB3\ObjectBuilders\ParameterObjectBuilder.cs" />
+    <Compile Include="XMLDB3\Sql Builder\ParameterUpdateBuilder.cs" />
+    <Compile Include="XMLDB3\Commands\PawnCoinModifyCommand.cs" />
+    <Compile Include="XMLDB3\Commands\PawnCoinModifyLogCommand.cs" />
+    <Compile Include="XMLDB3\Commands\PersonalRankingClearCacheCommand.cs" />
+    <Compile Include="XMLDB3\Commands\PersonalRankingClearCommand.cs" />
+    <Compile Include="XMLDB3\Serializers\PersonalRankingListSerializer.cs" />
+    <Compile Include="XMLDB3\Commands\PersonalRankingRead2Command.cs" />
+    <Compile Include="XMLDB3\Commands\PersonalRankingReadCommand.cs" />
+    <Compile Include="XMLDB3\Commands\PersonalRankingRemoveCommand.cs" />
+    <Compile Include="XMLDB3\Serializers\PersonalRankingSerializer.cs" />
+    <Compile Include="XMLDB3\SQL\Adapters\PersonalRankingAdapter.cs" />
+    <Compile Include="XMLDB3\PersonalRankingTable.cs" />
+    <Compile Include="XMLDB3\Serializers\PersonalRankingTableSerializer.cs" />
+    <Compile Include="XMLDB3\Commands\PersonalRankingUpdateCommand.cs" />
+    <Compile Include="XMLDB3\ObjectBuilders\PetAppearanceObjectBuilder.cs" />
+    <Compile Include="XMLDB3\Sql Builder\PetAppearanceUpdateBuilder.cs" />
+    <Compile Include="XMLDB3\ObjectBuilders\PetConditionObjectBuilder.cs" />
+    <Compile Include="XMLDB3\Sql Builder\PetConditionUpdateBuilder.cs" />
+    <Compile Include="XMLDB3\CreateBuilder\PetCreateBuilder.cs" />
+    <Compile Include="XMLDB3\Commands\PetCreateCommand.cs" />
+    <Compile Include="XMLDB3\ObjectBuilders\PetDataObjectBuilder.cs" />
+    <Compile Include="XMLDB3\Sql Builder\PetDataUpdateBuilder.cs" />
+    <Compile Include="XMLDB3\Commands\PetDeleteCommand.cs" />
+    <Compile Include="XMLDB3\Commands\PetDeleteRsvCommand.cs" />
+    <Compile Include="XMLDB3\Commands\PetGetWriteCounterCommand.cs" />
+    <Compile Include="XMLDB3\Objects\PetInfo.cs" />
+    <Compile Include="XMLDB3\ObjectBuilders\PetInventoryObjectBuilder.cs" />
+    <Compile Include="XMLDB3\Commands\PetItemDeleteCommand.cs" />
+    <Compile Include="XMLDB3\ObjectBuilders\PetMacroCheckerObjectBuilder.cs" />
+    <Compile Include="XMLDB3\Sql Builder\PetMacroCheckerUpdateBuilder.cs" />
+    <Compile Include="XMLDB3\ObjectBuilders\PetMemoryObjectBuilder.cs" />
+    <Compile Include="XMLDB3\Sql Builder\PetMemoryUpdateBuilder.cs" />
+    <Compile Include="XMLDB3\ObjectBuilders\PetObjectBuilder.cs" />
+    <Compile Include="XMLDB3\ObjectBuilders\PetParameterExObjectBuilder.cs" />
+    <Compile Include="XMLDB3\Sql Builder\PetParameterExUpdateBuilder.cs" />
+    <Compile Include="XMLDB3\ObjectBuilders\PetParameterObjectBuilder.cs" />
+    <Compile Include="XMLDB3\Sql Builder\PetParameterUpdateBuilder.cs" />
+    <Compile Include="XMLDB3\ObjectBuilders\PetPrivateObjectBuilder.cs" />
+    <Compile Include="XMLDB3\Sql Builder\PetPrivateUpdateBuilder.cs" />
+    <Compile Include="XMLDB3\Commands\PetReadAppearCommand.cs" />
+    <Compile Include="XMLDB3\Commands\PetReadCommand.cs" />
+    <Compile Include="XMLDB3\Commands\PetReviveCommand.cs" />
+    <Compile Include="XMLDB3\Serializers\PetSerializer.cs" />
+    <Compile Include="XMLDB3\ObjectBuilders\PetSkillObjectBuilder.cs" />
+    <Compile Include="XMLDB3\Sql Builder\PetSkillUpdateBuilder.cs" />
+    <Compile Include="XMLDB3\SQL\Adapters\PetAdapter.cs" />
+    <Compile Include="XMLDB3\ObjectBuilders\PetSummonObjectBuilder.cs" />
+    <Compile Include="XMLDB3\Sql Builder\PetSummonUpdateBuilder.cs" />
+    <Compile Include="XMLDB3\Sql Builder\PetUpdateBuilder.cs" />
+    <Compile Include="XMLDB3\Commands\PetUpdateCommand.cs" />
+    <Compile Include="XMLDB3\Commands\PlayinCommand.cs" />
+    <Compile Include="XMLDB3\Commands\PlayoutCommand.cs" />
+    <Compile Include="XMLDB3\Objects\PrivateFarm.cs" />
+    <Compile Include="XMLDB3\Commands\PrivateFarmCreateCommand.cs" />
+    <Compile Include="XMLDB3\Objects\PrivateFarmFacility.cs" />
+    <Compile Include="XMLDB3\Serializers\PrivateFarmFacilitySerializer.cs" />
+    <Compile Include="XMLDB3\Sql Builder\PrivateFarmFacilitySqlBuilder.cs" />
+    <Compile Include="XMLDB3\ObjectBuilders\PrivateFarmFieldObjectBuilder.cs" />
+    <Compile Include="XMLDB3\Serializers\PrivateFarmFieldSerializer.cs" />
+    <Compile Include="XMLDB3\Sql Builder\PrivateFarmFieldUpdateBuilder.cs" />
+    <Compile Include="XMLDB3\ObjectBuilders\PrivateFarmObjectBuilder.cs" />
+    <Compile Include="XMLDB3\Commands\PrivateFarmPenaltyDelete.cs" />
+    <Compile Include="XMLDB3\Commands\PrivateFarmPenaltyInsert.cs" />
+    <Compile Include="XMLDB3\Commands\PrivateFarmPenaltySelect.cs" />
+    <Compile Include="XMLDB3\Commands\PrivateFarmQueryUsableName.cs" />
+    <Compile Include="XMLDB3\Commands\PrivateFarmQueryZoneId.cs" />
+    <Compile Include="XMLDB3\Commands\PrivateFarmQueryZoneOwner.cs" />
+    <Compile Include="XMLDB3\Commands\PrivateFarmReadCommand.cs" />
+    <Compile Include="XMLDB3\Commands\PrivateFarmRecommendAdd.cs" />
+    <Compile Include="XMLDB3\Commands\PrivateFarmRecommendDeleteList.cs" />
+    <Compile Include="XMLDB3\Serializers\PrivateFarmRecommendListSerializer.cs" />
+    <Compile Include="XMLDB3\Commands\PrivateFarmRecommendQueryZoneId.cs" />
+    <Compile Include="XMLDB3\Commands\PrivateFarmRecommendReadList.cs" />
+    <Compile Include="XMLDB3\Serializers\PrivateFarmRecommendSerializer.cs" />
+    <Compile Include="XMLDB3\SQL\Adapters\PrivateFarmRecommendAdapter.cs" />
+    <Compile Include="XMLDB3\Serializers\PrivateFarmSerializer.cs" />
+    <Compile Include="XMLDB3\SQL\Adapters\PrivateFarmAdapter.cs" />
+    <Compile Include="XMLDB3\Sql Builder\PrivateFarmUpdateBuilder.cs" />
+    <Compile Include="XMLDB3\Commands\PrivateFarmUpdateCommand.cs" />
+    <Compile Include="XMLDB3\Commands\PrivateFarmUpdateTimeSelect.cs" />
+    <Compile Include="XMLDB3\Sql Builder\PrivateFarmUpdateTimeUpdateBuilder.cs" />
+    <Compile Include="XMLDB3\Objects\PrivateFarmVisitor.cs" />
+    <Compile Include="XMLDB3\Serializers\PrivateFarmVisitorListSerializer.cs" />
+    <Compile Include="XMLDB3\Serializers\PrivateFarmVisitorSerializer.cs" />
+    <Compile Include="XMLDB3\Sql Builder\PrivateFarmVisitorSqlBuilder.cs" />
+    <Compile Include="XMLDB3\Sql Builder\PrivateFarmVisitorUpdateBuilder.cs" />
+    <Compile Include="XMLDB3\Commands\PrivateFarmVisitorUpdateCommand.cs" />
+    <Compile Include="XMLDB3\ObjectBuilders\PrivateObjectBuilder.cs" />
+    <Compile Include="XMLDB3\Sql Builder\PrivateUpdateBuilder.cs" />
+    <Compile Include="XMLDB3\ProcessManager.cs" />
+    <Compile Include="XMLDB3\Profiler.cs" />
+    <Compile Include="XMLDB3\ProfilerClient.cs" />
+    <Compile Include="XMLDB3\Commands\PromotionBeginCommand.cs" />
+    <Compile Include="XMLDB3\Commands\PromotionEndCommand.cs" />
+    <Compile Include="XMLDB3\Commands\PromotionRecordScoreCommand.cs" />
+    <Compile Include="XMLDB3\SQL\Adapters\PromotionAdapter.cs" />
+    <Compile Include="XMLDB3\Commands\PropCreateCommand.cs" />
+    <Compile Include="XMLDB3\Commands\PropDeleteCommand.cs" />
+    <Compile Include="XMLDB3\Commands\PropIdPoolCommand.cs" />
+    <Compile Include="XMLDB3\SQL\Adapters\PropIdPoolAdapter.cs" />
+    <Compile Include="XMLDB3\Commands\PropListGetCommand.cs" />
+    <Compile Include="XMLDB3\Serializers\PropListSerializer.cs" />
+    <Compile Include="XMLDB3\Commands\PropReadCommand.cs" />
+    <Compile Include="XMLDB3\Serializers\PropSerializer.cs" />
+    <Compile Include="XMLDB3\SQL\Adapters\PropAdapter.cs" />
+    <Compile Include="XMLDB3\Commands\PropUpdateCommand.cs" />
+    <Compile Include="XMLDB3\ObjectBuilders\PVPObjectBuilder.cs" />
+    <Compile Include="XMLDB3\Sql Builder\PVPUpdateBuilder.cs" />
+    <Compile Include="XMLDB3\Commands\QueryInactiveAccountCommand.cs" />
+    <Compile Include="XMLDB3\Commands\QuerySimpleAccountCommand.cs" />
+    <Compile Include="XMLDB3\QuestComparer.cs" />
+    <Compile Include="XMLDB3\ObjectBuilders\QuestObjectBuilder.cs" />
+    <Compile Include="XMLDB3\Serializers\QuestSerializer.cs" />
+    <Compile Include="XMLDB3\Sql Builder\QuestUpdateBuilder.cs" />
+    <Compile Include="XMLDB3\Commands\RecommendInsertCommand.cs" />
+    <Compile Include="XMLDB3\Serializers\RecommendListSerializer.cs" />
+    <Compile Include="XMLDB3\Commands\RecommendSelectCommand.cs" />
+    <Compile Include="XMLDB3\Commands\RecommendSelectListCommand.cs" />
+    <Compile Include="XMLDB3\Serializers\RecommendSerializer.cs" />
+    <Compile Include="XMLDB3\SQL\Adapters\RecommendAdapter.cs" />
+    <Compile Include="XMLDB3\Commands\RecommendUpdateCommand.cs" />
+    <Compile Include="XMLDB3\Commands\RelicReadCommand.cs" />
+    <Compile Include="XMLDB3\Commands\RelicUpdateCommand.cs" />
+    <Compile Include="XMLDB3\RemoteFunction.cs" />
+    <Compile Include="XMLDB3\Remote Functions\RemoteFunction_CacheInfo.cs" />
+    <Compile Include="XMLDB3\Remote Functions\RemoteFunction_ExceptionInfo.cs" />
+    <Compile Include="XMLDB3\Remote Functions\RemoteFunction_NetworkInfo.cs" />
+    <Compile Include="XMLDB3\Remote Functions\RemoteFunction_SessionInfo.cs" />
+    <Compile Include="XMLDB3\Commands\RemoveReservedCharNameCommand.cs" />
+    <Compile Include="XMLDB3\Commands\RoyalAlchemistAddCommand.cs" />
+    <Compile Include="XMLDB3\Serializers\RoyalAlchemistListSerializer.cs" />
+    <Compile Include="XMLDB3\Commands\RoyalAlchemistReadCommand.cs" />
+    <Compile Include="XMLDB3\Commands\RoyalAlchemistReadListCommand.cs" />
+    <Compile Include="XMLDB3\Commands\RoyalAlchemistRemoveCommand.cs" />
+    <Compile Include="XMLDB3\Serializers\RoyalAlchemistSerializer.cs" />
+    <Compile Include="XMLDB3\SQL\Adapters\RoyalAlchemistAdapter.cs" />
+    <Compile Include="XMLDB3\Commands\RoyalAlchemistUpdateCommand.cs" />
+    <Compile Include="XMLDB3\Serializers\RuinListSerializer.cs" />
+    <Compile Include="XMLDB3\Commands\RuinReadCommand.cs" />
+    <Compile Include="XMLDB3\Serializers\RuinSerializer.cs" />
+    <Compile Include="XMLDB3\SQL\Adapters\RuinAdapter.cs" />
+    <Compile Include="XMLDB3\Commands\RuinUpdateCommand.cs" />
+    <Compile Include="XMLDB3\Commands\SaleCancelCommand.cs" />
+    <Compile Include="XMLDB3\Commands\SaleRequestCommand.cs" />
+    <Compile Include="XMLDB3\Commands\SaleRequestCommitCommmand.cs" />
+    <Compile Include="XMLDB3\Commands\SaleRequestRollbackCommand.cs" />
+    <Compile Include="XMLDB3\Commands\ScrapBookQueryBestCookList.cs" />
+    <Compile Include="XMLDB3\Commands\ScrapBookQueryScrappedList.cs" />
+    <Compile Include="XMLDB3\Commands\ScrapBookScrap.cs" />
+    <Compile Include="XMLDB3\SQL\Adapters\ScrapBookAdapter.cs" />
+    <Compile Include="XMLDB3\Commands\ScrapBookUpdateBestCook.cs" />
+    <Compile Include="XMLDB3\Commands\SerializedCommand.cs" />
+    <Compile Include="XMLDB3\Serializers\SerializedCommandTester.cs" />
+    <Compile Include="XMLDB3\ObjectBuilders\ServiceObjectBuilder.cs" />
+    <Compile Include="XMLDB3\Sql Builder\ServiceUpdateBuilder.cs" />
+    <Compile Include="XMLDB3\SessionStatistics.cs" />
+    <Compile Include="XMLDB3\SQL\Adapters\SetInfoAdapter.cs" />
+    <Compile Include="XMLDB3\ObjectBuilders\ShapeObjectBuilder.cs" />
+    <Compile Include="XMLDB3\Sql Builder\ShapeUpdateBuilder.cs" />
+    <Compile Include="XMLDB3\Serializers\ShopAdvertisebaseSerializer.cs" />
+    <Compile Include="XMLDB3\Commands\ShopAdvertiseItemAddCommand.cs" />
+    <Compile Include="XMLDB3\Commands\ShopAdvertiseItemDeleteCommand.cs" />
+    <Compile Include="XMLDB3\Commands\ShopAdvertiseItemPriceUpdateCommand.cs" />
+    <Compile Include="XMLDB3\Serializers\ShopAdvertiseItemSerializer.cs" />
+    <Compile Include="XMLDB3\Serializers\ShopAdvertiseListSerializer.cs" />
+    <Compile Include="XMLDB3\Commands\ShopAdvertiseReadCommand.cs" />
+    <Compile Include="XMLDB3\Commands\ShopAdvertiseRegisterCommand.cs" />
+    <Compile Include="XMLDB3\Serializers\ShopAdvertiseSerializer.cs" />
+    <Compile Include="XMLDB3\SQL\Adapters\ShopAdvertiseAdapter.cs" />
+    <Compile Include="XMLDB3\Commands\ShopAdvertiseUnregisterCommand.cs" />
+    <Compile Include="XMLDB3\Commands\ShopAdvertiseUpdateCommand.cs" />
+    <Compile Include="XMLDB3\ObjectBuilders\SkillObjectBuilder.cs" />
+    <Compile Include="XMLDB3\Sql Builder\SkillUpdateBuilder.cs" />
+    <Compile Include="XMLDB3\Sql Builder\SlotUpdateBuilder.cs" />
+    <Compile Include="XMLDB3\Serializers\SoulMateListSerializer.cs" />
+    <Compile Include="XMLDB3\Commands\SoulMateReadCommand.cs" />
+    <Compile Include="XMLDB3\Commands\SoulMateRemoveCommand.cs" />
+    <Compile Include="XMLDB3\Serializers\SoulMateSerializer.cs" />
+    <Compile Include="XMLDB3\SQL\Adapters\SoulMateAdapter.cs" />
+    <Compile Include="XMLDB3\Commands\SoulMateUpdateCommand.cs" />
+    <Compile Include="XMLDB3\Stopwatch.cs" />
+    <Compile Include="XMLDB3\ObjectBuilders\SubSkillObjectBuilder.cs" />
+    <Compile Include="XMLDB3\Sql Builder\SubSkillUpdateBuilder.cs" />
+    <Compile Include="XMLDB3\ObjectBuilders\TitleObjectBuilder.cs" />
+    <Compile Include="XMLDB3\Sql Builder\TitleUpdateBuilder.cs" />
+    <Compile Include="XMLDB3\UpdateUtility.cs" />
+    <Compile Include="XMLDB3\Sql Builder\UserDataUpdateBuilder.cs" />
+    <Compile Include="XMLDB3\SQL\Adapters\WebSynchAdapter.cs" />
+    <Compile Include="XMLDB3\Commands\WineDeleteCommand.cs" />
+    <Compile Include="XMLDB3\Commands\WineReadCommand.cs" />
+    <Compile Include="XMLDB3\Serializers\WineSerializer.cs" />
+    <Compile Include="XMLDB3\SQL\Adapters\WineAdapter.cs" />
+    <Compile Include="XMLDB3\Commands\WineUpdateCommand.cs" />
+    <Compile Include="XMLDB3\WorkSession.cs" />
+    <Compile Include="XMLDB3\Serializers\WorldMetaListSerializer.cs" />
+    <Compile Include="XMLDB3\Commands\WorldMetaReadCommand.cs" />
+    <Compile Include="XMLDB3\Serializers\WorldMetaSerializer.cs" />
+    <Compile Include="XMLDB3\SQL\Adapters\WorldMetaAdapter.cs" />
+    <Compile Include="XMLDB3\Commands\WorldMetaUpdateCommand.cs" />
+    <Compile Include="XMLDB3\Serializers\WorldMetaUpdateListSerializer.cs" />
+    <Compile Include="XMLDB3\XMLDB3Main.cs" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="app.config" />
+    <None Include="packages.config" />
+  </ItemGroup>
+  <ItemGroup>
+    <Content Include="ToDo.txt" />
+  </ItemGroup>
+  <ItemGroup>
+    <ProjectReference Include="..\Mabinogi.Network.External\Mabinogi.Network.External.csproj">
+      <Project>{0be7ff14-dbd8-47aa-86ac-193eb4332926}</Project>
+      <Name>Mabinogi.Network.External</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\Mabinogi.Network\Mabinogi.Network.csproj">
+      <Project>{367a6125-7fcf-4091-83a4-585821bbdd00}</Project>
+      <Name>Mabinogi.Network</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\Mabinogi.SQL\Mabinogi.SQL.csproj">
+      <Project>{01e291f0-be1b-4f2e-b5fd-6b9f27ba38dc}</Project>
+      <Name>Mabinogi.SQL</Name>
+    </ProjectReference>
+  </ItemGroup>
+  <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
+  <Target Name="EnsureNuGetPackageBuildImports" BeforeTargets="PrepareForBuild">
+    <PropertyGroup>
+      <ErrorText>This project references NuGet package(s) that are missing on this computer. Use NuGet Package Restore to download them.  For more information, see http://go.microsoft.com/fwlink/?LinkID=322105. The missing file is {0}.</ErrorText>
+    </PropertyGroup>
+    <Error Condition="!Exists('..\packages\EntityFramework.6.4.4\build\EntityFramework.props')" Text="$([System.String]::Format('$(ErrorText)', '..\packages\EntityFramework.6.4.4\build\EntityFramework.props'))" />
+    <Error Condition="!Exists('..\packages\EntityFramework.6.4.4\build\EntityFramework.targets')" Text="$([System.String]::Format('$(ErrorText)', '..\packages\EntityFramework.6.4.4\build\EntityFramework.targets'))" />
+  </Target>
+  <Import Project="..\packages\EntityFramework.6.4.4\build\EntityFramework.targets" Condition="Exists('..\packages\EntityFramework.6.4.4\build\EntityFramework.targets')" />
+</Project>
